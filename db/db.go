@@ -20,9 +20,11 @@ func Init() {
 	}
 
 	dbHost := os.Getenv("HOST")
-	dbUser := os.Getenv("USER")
+	dbUser := os.Getenv("POSTGRES_USER")
 	dbPassword := os.Getenv("PASSWORD")
 	dbName := os.Getenv("DATABASE")
+
+	fmt.Printf("%v", dbUser)
 
 	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s sslmode=disable", dbHost, dbUser, dbPassword, dbName)
 
